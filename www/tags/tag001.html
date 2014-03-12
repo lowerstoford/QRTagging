@@ -26,7 +26,7 @@ function scan() {
     <script>
         function playAudio(src) {
             if (device.platform == 'Android') {
-                src = '/android_asset/www/' + src;
+                src = '../android_asset/www/' + src;
             }
  
             var media = new Media(src, success, error_error);
@@ -45,7 +45,7 @@ function scan() {
     </script>
     		
 </head> 
-<body onload="playAudio('apple.mp3')"> 
+<body onload="playAudio('../apple.mp3')"> 
 
 <div data-role="page" id="page">
 	<div data-role="header">
