@@ -26,7 +26,7 @@ function scan() {
     <script>
         function playAudio(src) {
             if (device.platform == 'Android') {
-                src = 'android_asset/www/' + src;
+                src = '/android_asset/www/' + src;
             }
  
             var media = new Media(src, success, error_error);
@@ -51,17 +51,14 @@ function scan() {
 	<div data-role="header">
 		<h1>Page One</h1>
 	</div>
-	<div data-role="content">	
-    <img src="images/mapcompass.png" width="128" height="128"> 
-    Well Done! you have found the first QRTag</div>
+	<div data-role="content"> <a href="tag001.html"><img src="images/mapcompass.png" width="128" height="128"></a>
+    Tag001 </div>
 	<div data-role="footer">
 		<h4>Page Footer</h4>
 	</div>
 </div>
 
- 
-   
-	</div>
+
 	<div data-role="footer">
 		<h4>Page Footer</h4>
 	</div>
