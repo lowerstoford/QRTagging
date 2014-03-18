@@ -3,12 +3,63 @@
 <head>
 <meta charset="utf-8">
 <title>jQuery Mobile Web App</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=, initial-scale=1, maximum-scale=1" />
 <link href="jquery-mobile/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
 <link href="jquery-mobile/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
 <script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
 <script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
  <script type="text/javascript" charset="utf-8" src="barcodescanner.js"></script>
+ <script type="text/javascript" src="scripts/iscroll.js"></script>
+ 
+ <script type="text/javascript">
+
+var myScroll;
+
+function loaded () {
+	myScroll = new IScroll('#wrapper', { scrollX: true, freeScroll: true });
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+</script>
+
+</script>
+
+<style type="text/css">
+#wrapper {
+	position: absolute;
+	z-index: 1;
+	top: 45px;
+	bottom: 48px;
+	left: 0;
+	width: 100%;
+	background: #ccc;
+	overflow: hidden;
+}
+
+#scroller {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 2000px;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+	background: #fff;
+}
+</style>
 
 <script>
 function scan() {
@@ -46,7 +97,7 @@ function scan() {
     </script>
     		
 </head> 
-<body> 
+<body onload="loaded()"> 
 
 <div data-role="page" id="main">
 	<div data-role="header">
@@ -72,7 +123,10 @@ function scan() {
           <h1>Header</h1>
         </div>
         <div data-role="content">
-        
+        <div id="wrapper">
+	<div id="scroller">
+		
+	
         <!--======================== BEGIN COPYING THE HTML HERE ==========================-->
 <img src="images/map/testmap.gif" alt="" name="testmap" width="525" height="390" usemap="#m_testmap" class="ui-mobile-touch-overflow"><map name="m_testmap" >
 <area shape="poly" coords="115,196,102,206,87,227,22,318,47,361,142,236" href="#main" alt="" >
@@ -80,6 +134,9 @@ function scan() {
 <area shape="circle" coords="230,72, 15" href="javascript:;" alt="" >
 </map>
 <!--========================= STOP COPYING THE HTML HERE =========================-->
+
+</div>
+</div>
   </div>
         <div data-role="footer">
           <h4>Footer</h4>
